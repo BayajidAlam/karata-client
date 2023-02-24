@@ -3,7 +3,7 @@ import yoga from "../../assets/yoga.jpg";
 
 const Banner = () => {
   return (
-    <section className="py-6 bg-white">
+    <section className="pt-6 bg-white">
       <div className="flex lg:flex-row flex-col-reverse justify-center items-center container mx-auto">
         <div className="lg:w-1/2 w-5/6 mx-auto lg:space-y-12 space-y-6">
           <p className="text-main font-semibold text-lg">WELCOME TO KARATA</p>
