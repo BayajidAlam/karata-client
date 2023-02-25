@@ -5,10 +5,10 @@ import logo from "../../assets/logo.png";
 const NavBar = () => {
   const menuItem = <>
     <li><Link to='/'>Home</Link></li>
-    <li><Link to='/'>Services</Link></li>
+    <li><Link to='/services'>Services</Link></li>
     <li><Link to='/'>Add Service</Link></li>
     <li><Link to='/'>Contact us</Link></li>
-    <li><Link to='/'>Home</Link></li>
+    <li><Link to='/'>Blog</Link></li>
   </>
   return (
     <section>
@@ -39,7 +39,7 @@ const NavBar = () => {
               {menuItem}
             </ul>
           </div>
-          <Link to="/" className="btn btn-ghost normal-case text-xl">
+          <Link to="/" className="normal-case text-xl">
             <img src={logo} alt="" />
           </Link>
         </div>
