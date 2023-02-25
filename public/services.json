@@ -1,0 +1,44 @@
+[
+  {
+    "_id": "63f9908e3cd9f82f09740632",
+    "image": "https://i.postimg.cc/hj5C7Nzv/pleasent.png",
+    "price": 3000,
+    "service": "Anxiety Relief",
+    "description":  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis possimus repudiandae neque eligendi quia sed harum delectus, ducimus, non, similique voluptas ullam facere aliquid. Est deserunt natus nesciunt quidem rerum!"
+  },
+  {
+    "_id": "63f9908eb7ff430ca7b026b5",
+    "image": "https://i.postimg.cc/HLZGBZ8D/adequote.png",
+    "price": 3500,
+    "service": "Life Balancing",
+    "description":  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis possimus repudiandae neque eligendi quia sed harum delectus, ducimus, non, similique voluptas ullam facere aliquid. Est deserunt natus nesciunt quidem rerum!"
+  },
+  {
+    "_id": "63f9908ef47e6b0f39c6e7dc",
+    "image": "https://i.postimg.cc/JzxSz6qD/Reduce-Stress.png",
+    "price": 1500,
+    "service": "Reduce Stress",
+    "description":  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis possimus repudiandae neque eligendi quia sed harum delectus, ducimus, non, similique voluptas ullam facere aliquid. Est deserunt natus nesciunt quidem rerum!"
+  },
+  {
+    "_id": "63f9908ef27121d1a9f2ae5c",
+    "image": "https://i.postimg.cc/q7YbN9CR/group.png",
+    "price": 1000,
+    "service": "Essential Training",
+    "description":  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis possimus repudiandae neque eligendi quia sed harum delectus, ducimus, non, similique voluptas ullam facere aliquid. Est deserunt natus nesciunt quidem rerum!"
+  },
+  {
+    "_id": "63f9908e114ef4c81fbe95cd",
+    "image": "https://i.postimg.cc/bJ5Zc9M4/diet.png",
+    "price": 38,
+    "service": "Basic Yoga(Adult)",
+    "description":  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis possimus repudiandae neque eligendi quia sed harum delectus, ducimus, non, similique voluptas ullam facere aliquid. Est deserunt natus nesciunt quidem rerum!"
+  },
+  {
+    "_id": "63f9908e114ef4c81fbe95cd",
+    "image": "https://i.postimg.cc/rpBpfwrL/yoga-2.png",
+    "price": 38,
+    "service": "Basic Yoga(Old)",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis possimus repudiandae neque eligendi quia sed harum delectus, ducimus, non, similique voluptas ullam facere aliquid. Est deserunt natus nesciunt quidem rerum!"
+  }
+]
