@@ -6,7 +6,7 @@ import adequtePic from "../../assets/adequote.png";
 
 const WhoWeAre = () => {
   return (
-    <section className="sm:py-20 py-8 md:py-6">
+    <section className="lg:py-40 py-8 md:py-6">
       <div className="sm:flex container mx-auto justify-center items-center">
         <div className="sm:w-1/2 pb-4 md-pb-0 lg:pb-0">
           <div className="sm:w-3/5 w-4/5 space-y-6 mx-auto">
