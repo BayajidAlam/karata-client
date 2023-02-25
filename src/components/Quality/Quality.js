@@ -1,7 +1,7 @@
 import React from "react";
-import { MdOutlinePrivacyTip } from "react-icons/md";
-import { TbCandle } from "react-icons/tb";
-import { GiSkippingRope } from "react-icons/gi";
+import privatepic from '../../assets/private.png';
+import group from '../../assets/group.png';
+import diet from '../../assets/diet.png';
 
 const Quality = () => {
   return (
@@ -20,7 +20,7 @@ const Quality = () => {
           </div>
         </div>
         <div className="lg:w-1/5 space-y-4 text-white">
-          <MdOutlinePrivacyTip className="text-5xl text-main" />
+         <img src={privatepic} alt="" />
           <p className="text-3xl">Private Session</p>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi,
@@ -28,15 +28,15 @@ const Quality = () => {
           </p>
         </div>
         <div className="lg:w-1/5 space-y-4 text-white">
-          <GiSkippingRope  className="text-5xl text-main"/>
-          <p className="text-3xl">Private Session</p>
+          <img src={group} alt="" />
+          <p className="text-3xl">Group Session</p>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi,
             facilis!
           </p>
         </div>
         <div className="lg:w-1/5 space-y-4 text-white">
-          <TbCandle className="text-5xl text-main"/>
+          <img src={diet} alt="" />
           <p className="text-3xl">Program & Diet</p>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi,

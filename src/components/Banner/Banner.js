@@ -8,7 +8,7 @@ const Banner = () => {
         <div className="lg:w-1/2 w-5/6 mx-auto lg:space-y-12 space-y-6">
           <p className="text-main font-semibold text-lg">WELCOME TO KARATA</p>
           <div className="lg:w-4/5 lg:space-y-12 space-y-6">
-            <h1 className="text-6xl font-semibold">Feel the lightness of your body</h1>
+            <h1 className="lg:text-6xl text-2xl font-bold md:text-3xl">Feel the lightness of your body</h1>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et.
