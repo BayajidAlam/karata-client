@@ -7,7 +7,7 @@ import { PhotoProvider, PhotoView } from "react-photo-view";
 import "react-photo-view/dist/react-photo-view.css";
 
 const Service = ({ service }) => {
-  const { image, price, service: name, description } = service;
+  const { image, price, service: name, description,_id } = service;
   AOS.init();
   return (
     <div data-aos="fade-up" className="w-96 mx-auto p-6 shadow-lg space-y-4">
@@ -21,7 +21,7 @@ const Service = ({ service }) => {
         <p className="text-xl font-bold ">Price: ${price}</p>
       </div>
       <div>{description.length ? description.slice(0, 100) : description}</div>
-      <Link className="flex items-center justify-center" to="/">
+      <Link className="flex items-center justify-center" to={`/services/${_id}`}>
         <button className="mr-1 text-2xl font-bold text-main">
           view details
         </button>
