@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Service from "../Service/Service";
 
 const OurServices = () => {
@@ -27,7 +28,7 @@ const OurServices = () => {
           ))}
         </div>
         <div className="text-center py-6">
-          <button className="py-3 px-10 text-white text-lg font-bold bg-main">See All</button>
+          <Link to='/services'><button className="py-3 px-10 text-white text-lg font-bold bg-main">See All</button></Link>
         </div>
       </div>
     </section>
