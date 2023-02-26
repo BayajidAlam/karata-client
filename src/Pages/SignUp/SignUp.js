@@ -70,7 +70,8 @@ const SignUp = () => {
                   <input
                     {...register("password", {
                       required: "Password is required!",
-                      minLength: { value: 6, message: "Password must be 6 character or longer"}
+                      minLength: { value: 6, message: "Password must be 6 character or longer"},
+                      pattern: { value: /^(?=(.*[a-z]){2,})(?=(.*[A-Z]){1,})(?=(.*[0-9]){1,})(?=(.*[!@#$%^&*()\-__+.]){1,}).{8,}$/, message: "Password must be strong"}
                     })}
                     className="w-full bg-slate-100 py-2 px-2 rounded-lg placeholder:italic"
                     type="password"
