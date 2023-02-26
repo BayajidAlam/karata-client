@@ -8,10 +8,10 @@ import pic from "../../assets/signin.jpg";
 const LogIn = () => {
   return (
     <div>
-      <div className="flex flex-col-reverse md:flex-row lg:flow-row container mx-auto  sm:py-8">
-        <div className="sm:w-2/5 mx-auto shadow-2xl">
-          <div className="p-6 sm:space-y-4 mt-16">
-            <h1 className="text-2xl font-bold text-center">Sign In</h1>
+      <div className="flex flex-col-reverse md:flex-row lg:flow-row container mx-auto  lg:py-24">
+        <div className="sm:w-2/5 mx-auto shadow-2xl md:mt-12">
+          <div className="p-6 sm:space-y-4 lg:mt-16">
+            <h1 className="text-2xl font-bold text-center">Login</h1>
             <div className="space-y-1">
               <label className="text-lg font-semibold">Email</label>
               <input

@@ -11,7 +11,7 @@ const SignUp = () => {
   return (
     <section>
       <div>
-        <div className="flex flex-col-reverse md:flex-row lg:flow-row container mx-auto  sm:py-8">
+        <div className="flex flex-col-reverse md:flex-row lg:flow-row container mx-auto  py-0 lg:py-16">
           <div className="sm:w-2/5 mx-auto shadow-2xl">
             <div className="p-6 sm:space-y-4">
               <h1 className="text-2xl font-bold">Sign Up</h1>
