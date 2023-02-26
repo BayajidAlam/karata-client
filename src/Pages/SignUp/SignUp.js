@@ -11,12 +11,12 @@ const SignUp = () => {
   return (
     <section>
       <div>
-        <div className="flex container mx-auto  py-8">
-          <div className="w-2/5 mx-auto shadow-2xl">
-            <div className="p-6 space-y-4">
+        <div className="flex flex-col-reverse md:flex-row lg:flow-row container mx-auto  sm:py-8">
+          <div className="sm:w-2/5 mx-auto shadow-2xl">
+            <div className="p-6 sm:space-y-4">
               <h1 className="text-2xl font-bold">Sign Up</h1>
-              <p className="text-lg">
-                Already have an account?<Link>Login</Link>
+              <p className="text-lg text-another font-bold">
+                Already have an account?<Link  to='/login'>Login</Link>
               </p>
               <div className="space-y-1">
                 <label className="text-lg font-semibold">Name</label>
@@ -61,7 +61,7 @@ const SignUp = () => {
                 <p className="text-xl">Remember me</p>
               </div>
               <div className="text-center">
-                <button className="py-2 px-12 bg-[#AACCFC] text-white font-bold text-xl rounded-full">
+                <button className="py-2 px-12 bg-another text-white font-bold text-xl rounded-full">
                   Sign Up
                 </button>
               </div>
@@ -73,7 +73,7 @@ const SignUp = () => {
               </div>
             </div>
           </div>
-          <div className="w-2/5 mx-auto flex justify-center items-center">
+          <div className="sm:w-2/5 mx-auto flex justify-center items-center">
             <img className="w-full" src={pic} alt="" />
           </div>
         </div>
