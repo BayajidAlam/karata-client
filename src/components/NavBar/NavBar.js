@@ -13,9 +13,10 @@ const NavBar = () => {
   const menuItem = <>
     <li><Link to='/'>Home</Link></li>
     <li><Link to='/services'>Services</Link></li>
-    <li><Link to='/'>Add Service</Link></li>
-    <li><Link to='/'>Contact us</Link></li>
-    <li><Link to='/'>Blog</Link></li>
+    <li><Link to='/addService'>Add Service</Link></li>
+    <li><Link to='/my-review'>My Review</Link></li>
+    <li><Link to='/contact'>Contact us</Link></li>
+    <li><Link to='/blog'>Blog</Link></li>
   </>
 
   // sign out user 

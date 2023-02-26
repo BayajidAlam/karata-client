@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import pic from "../../assets/signup.jpg";
 import "./SignUp.css";
 import { FcGoogle } from "react-icons/fc";
@@ -13,6 +13,10 @@ const SignUp = () => {
 
   const { createUser, updateUser  } = useContext(AuthContext);
   const [signUpError, setSignUpError ] = useState("");
+
+  let navigate = useNavigate();
+  let location = useLocation();
+  let from = location.state?.from?.pathname || "/";
 
   const {
     register,
@@ -35,6 +39,7 @@ const SignUp = () => {
       updateUser(userInfo)
       .then(()=>{
         toast.success('Profile updated')
+        navigate(from, { replace: true });
       })
       .catch(error=>{
         const message = error.message;

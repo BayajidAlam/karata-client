@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import { CiTwitter } from "react-icons/ci";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import pic from "../../assets/signin.jpg";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
@@ -12,6 +12,11 @@ const LogIn = () => {
 
   const { logInUser } = useContext(AuthContext);
   const [ logInError, setLogInError ] = useState('');
+
+  let navigate = useNavigate();
+  let location = useLocation();
+
+  let from = location.state?.from?.pathname || "/";
 
   const {
     register,
@@ -25,6 +30,7 @@ const LogIn = () => {
     logInUser(data.email,data.password)
     .then(result => {
       toast.success("User logged in successfully")
+      navigate(from, { replace: true });
     })
     .catch(err=>{
       const message = err.message;
