@@ -12,7 +12,7 @@ const NavBar = () => {
   </>
   return (
     <section>
-      <div className="navbar bg-base-100 container mx-auto">
+      <div className="navbar py-4 container mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -52,7 +52,7 @@ const NavBar = () => {
             </ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">Get started</a>
+          <Link to='/login' className="py-2 text-white font-bold text-xl px-10 bg-main">Login</Link>
         </div>
       </div>
     </section>
