@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
+import { toast } from "react-hot-toast";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png";
+import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 
 const NavBar = () => {
+
+  const { user, signOutUser } = useContext(AuthContext);
+  console.log(user);
+
+  // one list for mobile tablet and desktop 
   const menuItem = <>
     <li><Link to='/'>Home</Link></li>
     <li><Link to='/services'>Services</Link></li>
@@ -10,6 +17,18 @@ const NavBar = () => {
     <li><Link to='/'>Contact us</Link></li>
     <li><Link to='/'>Blog</Link></li>
   </>
+
+  // sign out user 
+  const handleSignOut = () => {
+    signOutUser()
+    .then(()=>{
+
+    })
+    .catch(err=>{
+      toast.error(err.message)
+    })
+  }
+
   return (
     <section>
       <div className="navbar py-4 container mx-auto">
@@ -52,7 +71,14 @@ const NavBar = () => {
             </ul>
         </div>
         <div className="navbar-end">
-          <Link to='/login' className="py-2 text-white font-bold text-xl px-10 bg-main">Login</Link>
+          {
+            user?.uid? 
+            <div> 
+              <button onClick={()=>handleSignOut()} className="py-2 text-white font-bold text-xl px-7 bg-main">Sign out</button>
+            </div>
+            :
+            <Link to='/login' className="py-2 text-white font-bold text-xl px-10 bg-main">Login</Link>
+          }
         </div>
       </div>
     </section>

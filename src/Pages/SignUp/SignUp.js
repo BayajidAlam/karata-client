@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import pic from "../../assets/signup.jpg";
 import "./SignUp.css";
@@ -6,8 +6,14 @@ import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import { CiTwitter } from "react-icons/ci";
 import { useForm } from "react-hook-form";
+import { AuthContext } from "../../context/AuthProvider/AuthProvider";
+import { toast, Toaster } from "react-hot-toast";
 
 const SignUp = () => {
+
+  const { createUser, updateUser  } = useContext(AuthContext);
+  const [signUpError, setSignUpError ] = useState("");
+
   const {
     register,
     formState: { errors },
@@ -15,9 +21,34 @@ const SignUp = () => {
   } = useForm();
 
   const handleSIgnUp = (data) => {
-    console.log(data);
-    console.log(errors)
+    setSignUpError('');
+    // create user 
+    createUser(data.email,data.password)
+    .then(result => {
+      toast.success("User created Successfully")
+
+      // create a object for update user 
+      const userInfo = {
+        displayName : data.name
+      }
+      // update user 
+      updateUser(userInfo)
+      .then(()=>{
+        toast.success('Profile updated')
+      })
+      .catch(error=>{
+        const message = error.message;
+      setSignUpError(message)
+      })
+
+    })
+    .catch((error)=>{
+      const message = error.message;
+      setSignUpError(message);
+    })
   };
+
+  
 
   return (
     <section>
@@ -28,7 +59,7 @@ const SignUp = () => {
               <div className="p-6 sm:space-y-4">
                 <h1 className="text-2xl font-bold">Sign Up</h1>
                 <p className="text-lg text-another font-bold">
-                  Already have an account?<Link to="/login">Login</Link>
+                <Link to="/login">Already have an account?Login</Link>
                 </p>
                 <div className="space-y-1">
                   <label className="text-lg font-semibold">Name</label>
@@ -98,6 +129,7 @@ const SignUp = () => {
                     placeholder="**********"
                   />
                 </div>
+                <p className="text-red-500">{signUpError}</p>
                 <div className="flex space-x-2 items-center">
                   <input
                     type="checkbox"
@@ -128,6 +160,7 @@ const SignUp = () => {
           </div>
         </div>
       </div>
+      <Toaster/>
     </section>
   );
 };

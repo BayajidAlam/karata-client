@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import { CiTwitter } from "react-icons/ci";
 import { Link } from "react-router-dom";
 import pic from "../../assets/signin.jpg";
 import { useForm } from "react-hook-form";
+import { AuthContext } from "../../context/AuthProvider/AuthProvider";
+import { toast, Toaster } from "react-hot-toast";
 
 const LogIn = () => {
+
+  const { logInUser } = useContext(AuthContext);
+  const [ logInError, setLogInError ] = useState('');
 
   const {
     register,
@@ -14,10 +19,17 @@ const LogIn = () => {
     handleSubmit,
   } = useForm();
 
-
+  // handle user log in 
   const handleLogin = (data) => {
-    console.log(data);
-    console.log(errors);
+    setLogInError('')
+    logInUser(data.email,data.password)
+    .then(result => {
+      toast.success("User logged in successfully")
+    })
+    .catch(err=>{
+      const message = err.message;
+      setLogInError(message)
+    })
   };
 
   return (
@@ -60,9 +72,11 @@ const LogIn = () => {
                   placeholder="**********"
                 />
               </div>
-
+                
+                  <p className="text-red-500">{logInError}</p>
+                
               <p className="text-lg font-bold text-another">
-                New to karata?<Link to="/signUp">Create new account</Link>
+              <Link to="/signUp">New to karata?Create new account</Link>
               </p>
               <div className="text-center">
                 <button type="submit" className="py-2 px-12 bg-another text-white font-bold text-xl rounded-full">
@@ -82,6 +96,7 @@ const LogIn = () => {
           <img className="w-full" src={pic} alt="" />
         </div>
       </div>
+      <Toaster/>
     </div>
   );
 };
