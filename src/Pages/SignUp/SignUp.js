@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import pic from "../../assets/signup.jpg";
 import "./SignUp.css";
 import { FcGoogle } from 'react-icons/fc';
+import { FaGithub } from 'react-icons/fa';
+import { CiTwitter } from 'react-icons/ci';
 
 
 const SignUp = () => {
@@ -10,7 +12,7 @@ const SignUp = () => {
     <section>
       <div>
         <div className="flex container mx-auto  py-8">
-          <div className="w-2/5 mx-auto shadow-2xl h-3/4">
+          <div className="w-2/5 mx-auto shadow-2xl">
             <div className="p-6 space-y-4">
               <h1 className="text-2xl font-bold">Sign Up</h1>
               <p className="text-lg">
@@ -64,13 +66,15 @@ const SignUp = () => {
                 </button>
               </div>
               <div className="divider">OR</div>
-              <div>
-                <FcGoogle/>
+              <div className="flex items-center justify-center space-x-3">
+                <FcGoogle className="text-3xl"/>
+                <FaGithub className="text-3xl"/>
+                <CiTwitter className="text-3xl"/>
               </div>
             </div>
           </div>
-          <div className="w-2/5 mx-auto">
-            <img className="w-full h-3/4" src={pic} alt="" />
+          <div className="w-2/5 mx-auto flex justify-center items-center">
+            <img className="w-full" src={pic} alt="" />
           </div>
         </div>
       </div>
