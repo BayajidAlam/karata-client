@@ -1,8 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Service from "../../components/Service/Service";
 import banner from "../../assets/banner.png";
+import { AuthContext } from "../../context/AuthProvider/AuthProvider";
+import Loading from "../../components/Loading/Loading";
 
 const Services = () => {
+  const { loading } = useContext(AuthContext)
   const [services, setServices] = useState([]);
 
   useEffect(() => {
@@ -10,6 +13,10 @@ const Services = () => {
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);
+
+  if(loading){
+    return <Loading/>
+  }
 
   return (
     <section className="mt-12">
@@ -32,6 +39,7 @@ const Services = () => {
 
         <h1 className="text-center font-bold text-main text-2xl py-8">ALL Services</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          
           {services.map((service) => (
             <Service service={service} />
           ))}

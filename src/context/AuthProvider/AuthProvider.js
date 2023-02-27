@@ -11,21 +11,25 @@ const AuthProvider = ({children}) => {
 
   // create a new user 
   const createUser = (email,password) => {
+    setLoading(true)
     return createUserWithEmailAndPassword(auth,email,password);
   }
 
   // login a existing user 
   const logInUser = (email,password) => {
+    setLoading(true)
     return signInWithEmailAndPassword(auth,email,password);
   }
 
   // sign out user 
   const signOutUser = () => {
+    setLoading(true)
     return signOut(auth)
   }
 
   // update a user 
   const updateUser = userInfo => {
+    setLoading(true)
     return updateProfile(auth.currentUser,userInfo)
   }
 
@@ -33,6 +37,7 @@ const AuthProvider = ({children}) => {
   useEffect(()=>{
     const unsubscribe = onAuthStateChanged(auth, currentUser=>{
       setUser(currentUser);
+      setLoading(false)
     })
 
     return () => {
