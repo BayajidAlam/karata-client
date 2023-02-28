@@ -1,10 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { toast, Toaster } from "react-hot-toast";
 import { useLoaderData } from "react-router-dom";
+import Loading from "../../components/Loading/Loading";
 import Review from "../../components/Review/Review";
+import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 
 const SingleService = () => {
   const service = useLoaderData();
-  const [ reviews, setReviews ] = useState([]);
+  const [reviews, setReviews] = useState([]);
+  const { user, loading } = useContext(AuthContext);
 
   const {
     price,
@@ -18,16 +22,60 @@ const SingleService = () => {
     duration,
   } = service;
 
-  // load review from db 
-  useEffect(()=>{
+  // load review from db
+  useEffect(() => {
     fetch(`http://localhost:5000/reviews?name=${name}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setReviews(data);
+      });
+  }, [name]);
+
+  let photo = user?.photoURL;
+  let userName;
+  if (user?.photoURL === null) {
+    photo = "https://i.postimg.cc/mrB4CYTC/Max-R-Headshot-1.jpg";
+  }
+
+  // send a review to server and save to db
+  const handleAddReview = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const comment = form.message.value;
+    const inputedName = form.name.value;
+    userName = inputedName || user?.displayName;
+
+    // review object
+    const review = {
+      id: _id,
+      userName: userName,
+      review: comment,
+      picture: photo,
+      rating: 5,
+      email: user?.email,
+      ServiceName: name,
+    };
+    
+    fetch('http://localhost:5000/reviews',{
+      method: "POST",
+      headers: {
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify(review)
+    })
     .then(res=>res.json())
     .then(data=>{
-      setReviews(data)
+      if(data.acknowledged){
+        toast.success('Review added successfully!')
+        form.reset();
+      }
     })
-  },[name])
+  };
 
-
+  // loading 
+  if(loading){
+    return <Loading/>
+  }
   return (
     <section className="sm:py-6">
       <h1 className="lg:text-3xl md:text-2xl text-xl text-center font-bold text-main">
@@ -80,23 +128,38 @@ const SingleService = () => {
 
       {/* review section  */}
       <div>
-        <div className="lg:flex container items-center mx-auto p-6">
-              <div className="lg:w-1/2 flex  flex-col gap-4">
-                  {
-                    reviews.map(review=><Review
-                    key={review._id}
-                    review={review}
-                    />)
-                  }
-              </div>
+        <div className="lg:flex container items-center mx-auto p-12">
+          <div className="lg:w-1/2 flex  flex-col gap-4">
+            {reviews.map((review) => (
+              <Review key={review._id} review={review} />
+            ))}
+          </div>
 
-              <div className="lg:w-1/2 flex flex-col gap-4 items-start">
-                  <p className="text-lg">Make a Comment</p>
-                  <textarea placeholder="Bio" className="textarea textarea-bordered textarea-md w-full lg:w-1/2" ></textarea>
-                  <button className="bg-main px-8 py-2 text-white rounded-full font-bold text-lg">Comment</button>
-              </div>
+          <div className="lg:w-1/2 flex flex-col gap-4 items-start">
+            <p className="text-lg">Make a Comment</p>
+            <form onSubmit={handleAddReview}>
+              <input
+                name="name"
+                type="text"
+                placeholder="Your Name"
+                className="input input-bordered w-full mb-6"
+              />
+              <textarea
+                name="message"
+                className="textarea textarea-bordered textarea-md w-full mb-4"
+                placeholder="Add your review"
+              ></textarea>
+              <button
+                type="submit"
+                className="bg-main px-8 py-2 text-white rounded-full font-bold text-lg"
+              >
+                Comment
+              </button>
+            </form>
+          </div>
         </div>
       </div>
+      <Toaster/>
     </section>
   );
 };
