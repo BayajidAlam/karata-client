@@ -4,10 +4,10 @@ import CountUp from "react-countup";
 const WhyChooseUs = () => {
   return (
     <section className="bg-[#444444] text-white">
-      <div className="container mx-auto flex items-center  py-20 px-12">
-        <div className="w-1/2">
+      <div className="container mx-auto lg:flex items-center  py-20 px-12">
+        <div className="lg:w-1/2">
           <p className="text-main text-xl font-bold mb-4">WHY CHOOSE US</p>
-          <div className="space-y-6 w-5/6">
+          <div className="space-y-6 lg:w-5/6">
             <h1 className="text-5xl font-bold">Over 1300+ complete work & still counting</h1>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo quos
@@ -18,7 +18,7 @@ const WhyChooseUs = () => {
             <button className="bg-main text-xl py-3 font-bold px-8">Learn More</button>
           </div>
         </div>
-        <div className="w-1/2">
+        <div className="lg:w-1/2 mt-4 md:mt:0 lg:mt-0">
           <div className="grid grid-cols-2 gap-6">
             <div className="flex flex-col items-center">
               <h1 className="text-6xl font-bold"><CountUp start={0} end={100} duration={2} delay={1}/>K+</h1>
