@@ -1,12 +1,13 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { useQuery } from "react-query";
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 import { AiFillDelete } from "react-icons/ai";
-import { toast } from "react-hot-toast";
-
+import { toast, Toaster } from "react-hot-toast";
+import Modal from "../../components/Modal/Modal";
 
 const MyReview = () => {
   const { user } = useContext(AuthContext);
+  const [editReview, SetEditReview] = useState(null);
 
   //------------fetch all review--------------//
   const { data: reviews = [], refetch } = useQuery({
@@ -71,9 +72,14 @@ const MyReview = () => {
                     </td>
                     <td>{review.review}</td>
                     <td>
-                      <button className="px-4 py-1 bg-main text-white text-xl font-bold rounded">
+                      <button className=""></button>
+                      <label
+                        onClick={() => SetEditReview(review)}
+                        htmlFor="update_comment_modal"
+                        className="btn btn-ghost px-4 py-1 bg-main text-white text-xl font-bold rounded"
+                      >
                         Edit
-                      </button>
+                      </label>
                     </td>
                     <th>
                       <button
@@ -87,9 +93,15 @@ const MyReview = () => {
                 ))}
               </tbody>
             </table>
+            {editReview && <Modal 
+            editReview={editReview}
+            refetch={refetch}
+            SetEditReview={SetEditReview}
+            />}
           </div>
         </div>
       </div>
+      <Toaster />
     </section>
   );
 };

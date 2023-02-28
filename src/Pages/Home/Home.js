@@ -4,6 +4,7 @@ import Loading from '../../components/Loading/Loading';
 import OurServices from '../../components/OurServices/OurServices';
 import Quality from '../../components/Quality/Quality';
 import WhoWeAre from '../../components/WhoWeAre/WhoWeAre';
+import WhyChooseUs from '../../components/WhyChooseUs/WhyChooseUs';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
 const Home = () => {
@@ -17,6 +18,7 @@ const Home = () => {
        <Quality/>
        <WhoWeAre/>
        <OurServices/>
+       <WhyChooseUs/>
    </section>
   );
 };
