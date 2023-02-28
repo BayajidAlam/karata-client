@@ -19,7 +19,7 @@ const Services = () => {
   }
 
   return (
-    <section className="mt-12">
+    <section className="my-12 ">
       <div className="container mx-auto">
         <div className="flex justify-center items-center shadow py-4 shadow-main">
           <div className="w-2/5">

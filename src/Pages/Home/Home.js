@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import Banner from '../../components/Banner/Banner';
+import Classes from '../../components/Classes/Classes';
 import Loading from '../../components/Loading/Loading';
 import OurServices from '../../components/OurServices/OurServices';
 import Quality from '../../components/Quality/Quality';
@@ -19,6 +20,7 @@ const Home = () => {
        <WhoWeAre/>
        <OurServices/>
        <WhyChooseUs/>
+       <Classes/>
    </section>
   );
 };
