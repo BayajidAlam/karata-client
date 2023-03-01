@@ -3,8 +3,8 @@ import React from "react";
 const Classes = () => {
   return (
     <section>
-      <div className="lg:flex container mx-auto items-center pt-24 pb-12 px-6">
-        <div className="space-y-4 mb-6 lg:mb-0">
+      <div className="lg:flex container mx-auto items-center pt-28 pb-20 px-6">
+        <div className="space-y-12 mb-6 lg:mb-0">
           <p className="text-main font-bold capitalize">CLASSES</p>
           <h1 className="text-5xl font-bold">Find your perfect class</h1>
           <p className="w-4/5">
