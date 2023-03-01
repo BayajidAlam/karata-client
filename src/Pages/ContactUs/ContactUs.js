@@ -4,11 +4,15 @@ import { BiEnvelopeOpen } from 'react-icons/bi';
 import { IoIosCall } from 'react-icons/io';
 import { AiOutlineClockCircle } from 'react-icons/ai';
 import Maps from '../../components/Maps/Maps';
+import Contact from '../../components/Contact/Contact';
+import Gallery from '../../components/Gallery/Gallery';
+import GetHelp from '../../components/GetHelp/GetHelp';
 
 const ContactUs = () => {
   return (
     <section>
-      <div className='container mx-auto flex justify-evenly items-center py-20'>
+      <GetHelp/>
+      <div className='container mx-auto sm:flex justify-evenly items-center py-20'>
         <div className='text-center space-y-6'>
           <div className='bg-main w-20 h-20 flex items-center justify-center rounded-full mx-auto'>
           <MdLocationOn className='text-white text-2xl'/>
@@ -41,6 +45,8 @@ const ContactUs = () => {
       </div>
       <div className='w-full'>
       <Maps/>
+      <Contact/>
+      <Gallery/>
       </div>
     </section>
   );

@@ -1,7 +1,7 @@
 .leaflet-container{
-  width: 65%;
-  height: 400px;
-  margin: 30px auto;
+  width: 100vw;
+  height: 600px;
+  margin: 0px auto;
 }
 
 @media screen and (max-width:500px) {
@@ -14,7 +14,7 @@
 
 @media screen and (max-width:768px) {
   .leaflet-container{
-    width: 80%;
-    margin: 20px auto;
+    width: 100%;
+    margin: 0 auto;
   }
 }
