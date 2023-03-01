@@ -16,7 +16,7 @@ const NavBar = () => {
     <li><Link to='/addService'>Add Service</Link></li>
     <li><Link to='/myReview'>My Review</Link></li>
     <li><Link to='/contactUs'>Contact us</Link></li>
-    <li><Link to='/blog'>Blog</Link></li>
+    <li><Link to='/blogs'>Blog</Link></li>
   </>
 
   // sign out user 

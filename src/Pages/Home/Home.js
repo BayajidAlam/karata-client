@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import Banner from '../../components/Banner/Banner';
 import BodyBalance from '../../components/BodyBalance/BodyBalance';
 import Classes from '../../components/Classes/Classes';
+import Gallery from '../../components/Gallery/Gallery';
 import Loading from '../../components/Loading/Loading';
 import OurServices from '../../components/OurServices/OurServices';
 import Quality from '../../components/Quality/Quality';
@@ -25,6 +26,7 @@ const Home = () => {
        <Classes/>
        <BodyBalance/>
        <Teacher/>
+       <Gallery/>
    </section>
   );
 };
