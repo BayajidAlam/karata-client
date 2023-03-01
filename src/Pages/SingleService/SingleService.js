@@ -24,7 +24,7 @@ const SingleService = () => {
 
   // load review from db
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews?name=${name}`)
+    fetch(`https://karata-server.vercel.app/reviews?name=${name}`)
       .then((res) => res.json())
       .then((data) => {
         setReviews(data);
@@ -55,26 +55,26 @@ const SingleService = () => {
       email: user?.email,
       ServiceName: name,
     };
-    
-    fetch('http://localhost:5000/reviews',{
+
+    fetch("https://karata-server.vercel.app/reviews", {
       method: "POST",
       headers: {
-        'Content-type': 'application/json'
+        "Content-type": "application/json",
       },
-      body: JSON.stringify(review)
+      body: JSON.stringify(review),
     })
-    .then(res=>res.json())
-    .then(data=>{
-      if(data.acknowledged){
-        toast.success('Review added successfully!')
-        form.reset();
-      }
-    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.acknowledged) {
+          toast.success("Review added successfully!");
+          form.reset();
+        }
+      });
   };
 
-  // loading 
-  if(loading){
-    return <Loading/>
+  // loading
+  if (loading) {
+    return <Loading />;
   }
   return (
     <section className="sm:py-6">
@@ -159,7 +159,7 @@ const SingleService = () => {
           </div>
         </div>
       </div>
-      <Toaster/>
+      <Toaster />
     </section>
   );
 };

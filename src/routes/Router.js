@@ -27,7 +27,9 @@ export const router = createBrowserRouter([
       {
         path: "/services/:id",
         loader: async ({ params }) => {
-          return fetch(`http://localhost:5000/services/${params.id}`);
+          return fetch(
+            `https://karata-server.vercel.app/services/${params.id}`
+          );
         },
         element: <SingleService />,
       },
@@ -48,17 +50,17 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: '/addService',
-        element: <AddService/>
+        path: "/addService",
+        element: <AddService />,
       },
       {
-        path: '/contactUs',
-        element: <ContactUs/>
+        path: "/contactUs",
+        element: <ContactUs />,
       },
       {
-        path: '/blogs',
-        element: <Blog/>
-      }
+        path: "/blogs",
+        element: <Blog />,
+      },
     ],
   },
 ]);

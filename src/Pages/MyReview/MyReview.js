@@ -14,7 +14,7 @@ const MyReview = () => {
     queryKey: ["reviewsquery", user?.email],
     queryFn: async () => {
       const res = await fetch(
-        `http://localhost:5000/reviewsquery?email=${user?.email}`
+        `https://karata-server.vercel.app/reviewsquery?email=${user?.email}`
       );
       const data = await res.json();
       return data;
@@ -26,7 +26,7 @@ const MyReview = () => {
   const handleDeleteReview = (id) => {
     const proceed = window.confirm("Are you sure to delete?");
     if (proceed) {
-      fetch(`http://localhost:5000/review/${id}`, {
+      fetch(`https://karata-server.vercel.app/review/${id}`, {
         method: "DELETE",
         headers: {
           "Content-type": "application/json",
@@ -93,11 +93,13 @@ const MyReview = () => {
                 ))}
               </tbody>
             </table>
-            {editReview && <Modal 
-            editReview={editReview}
-            refetch={refetch}
-            SetEditReview={SetEditReview}
-            />}
+            {editReview && (
+              <Modal
+                editReview={editReview}
+                refetch={refetch}
+                SetEditReview={SetEditReview}
+              />
+            )}
           </div>
         </div>
       </div>

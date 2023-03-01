@@ -5,17 +5,17 @@ import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 import Loading from "../../components/Loading/Loading";
 
 const Services = () => {
-  const { loading } = useContext(AuthContext)
+  const { loading } = useContext(AuthContext);
   const [services, setServices] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/services")
+    fetch("https://karata-server.vercel.app/services")
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);
 
-  if(loading){
-    return <Loading/>
+  if (loading) {
+    return <Loading />;
   }
 
   return (
@@ -37,9 +37,10 @@ const Services = () => {
           <img className="w-2/5" src={banner} alt="" />
         </div>
 
-        <h1 className="text-center font-bold text-main text-2xl py-8">ALL Services</h1>
+        <h1 className="text-center font-bold text-main text-2xl py-8">
+          ALL Services
+        </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-          
           {services.map((service) => (
             <Service service={service} />
           ))}

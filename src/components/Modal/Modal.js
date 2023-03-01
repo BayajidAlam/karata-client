@@ -22,7 +22,7 @@ const Modal = ({ editReview, SetEditReview, refetch }) => {
     };
 
     //------------send new data to server for update--------//
-    fetch(`http://localhost:5000/update/${_id}`, {
+    fetch(`https://karata-server.vercel.app/update/${_id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "Application/json",
@@ -32,11 +32,11 @@ const Modal = ({ editReview, SetEditReview, refetch }) => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        if (data.modifiedCount > 0 ) {
+        if (data.modifiedCount > 0) {
           toast.success("User updated successfully!");
           form.reset();
           navigate("/myReview");
-          refetch()
+          refetch();
           SetEditReview(null);
         }
       });
@@ -80,7 +80,7 @@ const Modal = ({ editReview, SetEditReview, refetch }) => {
             </div>
           </form>
         </div>
-        <Toaster/>
+        <Toaster />
       </div>
     </>
   );

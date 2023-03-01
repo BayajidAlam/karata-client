@@ -6,7 +6,7 @@ const OurServices = () => {
   const [services, setServices] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/limitedServices")
+    fetch("https://karata-server.vercel.app/limitedServices")
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);
@@ -28,7 +28,11 @@ const OurServices = () => {
           ))}
         </div>
         <div className="text-center py-6">
-          <Link to='/services'><button className="py-3 px-10 text-white text-lg font-bold bg-main">See All</button></Link>
+          <Link to="/services">
+            <button className="py-3 px-10 text-white text-lg font-bold bg-main">
+              See All
+            </button>
+          </Link>
         </div>
       </div>
     </section>
