@@ -29,19 +29,6 @@ const LogIn = () => {
     logInUser(data.email,data.password)
     .then(result => {
       toast.success("User logged in successfully")
-
-      const currentUser = {
-        email: result.user.email
-      };
-      
-      // get jwt token 
-      fetch('http://localhost:5000/jwt',{
-        method: 'POST',
-        headers: {
-          'content-type': 'application/json'
-        },
-        body: JSON.stringify(currentUser)
-      })
       navigate(from, { replace: true });
     })
     .catch(err=>{
