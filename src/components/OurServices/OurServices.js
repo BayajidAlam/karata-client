@@ -6,7 +6,7 @@ const OurServices = () => {
   const [services, setServices] = useState([]);
 
   useEffect(() => {
-    fetch("https://karata-server.vercel.app/limitedServices")
+    fetch("http://localhost:5000/limitedServices")
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);

@@ -24,7 +24,7 @@ const SingleService = () => {
 
   // load review from db
   useEffect(() => {
-    fetch(`https://karata-server.vercel.app/reviews?name=${name}`)
+    fetch(`http://localhost:5000/reviews?name=${name}`)
       .then((res) => res.json())
       .then((data) => {
         setReviews(data);
@@ -56,7 +56,7 @@ const SingleService = () => {
       ServiceName: name,
     };
 
-    fetch("https://karata-server.vercel.app/reviews", {
+    fetch("http://localhost:5000/reviews", {
       method: "POST",
       headers: {
         "Content-type": "application/json",

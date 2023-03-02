@@ -22,7 +22,7 @@ const Modal = ({ editReview, SetEditReview, refetch }) => {
     };
 
     //------------send new data to server for update--------//
-    fetch(`https://karata-server.vercel.app/update/${_id}`, {
+    fetch(`http://localhost:5000/update/${_id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "Application/json",
