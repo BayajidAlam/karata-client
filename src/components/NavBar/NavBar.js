@@ -7,7 +7,7 @@ import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 const NavBar = () => {
 
   const { user, signOutUser } = useContext(AuthContext);
-  console.log(user);
+
 
   // one list for mobile tablet and desktop 
   const menuItem = <>
