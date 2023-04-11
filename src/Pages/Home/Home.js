@@ -13,9 +13,11 @@ import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
 const Home = () => {
   const { loading } = useContext(AuthContext);
+
   if(loading){
     return <Loading/>
   }
+  
   return (
    <section>
        <Banner/>

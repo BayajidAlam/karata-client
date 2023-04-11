@@ -22,7 +22,7 @@ const Modal = ({ editReview, SetEditReview, refetch }) => {
     };
 
     //------------send new data to server for update--------//
-    fetch(`http://localhost:5000/update/${_id}`, {
+    fetch(`https://karata-server-test.onrender.com/update/${_id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "Application/json",

@@ -6,7 +6,7 @@ const OurServices = () => {
   const [services, setServices] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/limitedServices")
+    fetch("https://karata-server-test.onrender.com/limitedServices")
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);

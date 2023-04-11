@@ -46,7 +46,7 @@ const AddService = () => {
 
     if (teacherPic && image) {
       // post to server
-      fetch("http://localhost:5000/services/post", {
+      fetch("https://karata-server-test.onrender.com/services/post", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -24,7 +24,7 @@ const SingleService = () => {
 
   // load review from db
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews?name=${name}`)
+    fetch(`https://karata-server-test.onrender.com/reviews?name=${name}`)
       .then((res) => res.json())
       .then((data) => {
         setReviews(data);
@@ -56,7 +56,7 @@ const SingleService = () => {
       ServiceName: name,
     };
 
-    fetch("http://localhost:5000/reviews", {
+    fetch("https://karata-server-test.onrender.com/reviews", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
